@@ -12,5 +12,6 @@ public interface GooglePlaceService {
     //@GET("/maps/api/place/nearbysearch/json")
     //Call<Place> searchPlaces(
     //        @QueryMap Map<String, String> options);
-    List<PlacePojo> searchPlaces(String keyWord, Location location, String radius, boolean chooseOnlyOpen) throws ExecutionException, InterruptedException;
+    List<PlacePojo> searchPlaces(String keyWord, Location location, String radius, boolean chooseOnlyOpen)
+            throws ExecutionException, InterruptedException;
 }

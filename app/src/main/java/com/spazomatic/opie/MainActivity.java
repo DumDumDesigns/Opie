@@ -34,6 +34,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.spazomatic.opie.services.places.GooglePlaceService;
 import com.spazomatic.opie.services.places.GooglePlaceServiceImpl;
 import com.spazomatic.opie.services.places.PlacePojo;
 
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     // HTTP GET request
     private void sendGet(String searchWord) throws Exception {
         map.clear();
-        GooglePlaceServiceImpl placesService = new GooglePlaceServiceImpl();
+        GooglePlaceService placesService = GooglePlaceServiceImpl.getInstance();
         List<PlacePojo> placesFound = placesService.searchPlaces(
                 searchWord, currentLocation, "5000", chooseOnlyOpen);
         for (PlacePojo pp : placesFound) {

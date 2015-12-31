@@ -11,6 +11,13 @@ import java.util.concurrent.ExecutionException;
 public class GooglePlaceServiceImpl implements GooglePlaceService {
 
     private static final String LOG_TAG = GooglePlaceServiceImpl.class.getName();
+    private static class ThreadSafeLazySingletonHelper {
+        private static final GooglePlaceServiceImpl INSTANCE = new GooglePlaceServiceImpl();
+    }
+    private GooglePlaceServiceImpl(){}
+    public static GooglePlaceServiceImpl getInstance(){
+        return ThreadSafeLazySingletonHelper.INSTANCE;
+    }
 
     @Override
     public List<PlacePojo> searchPlaces(String keyWord, Location location, String radius, boolean chooseOnlyOpen)
