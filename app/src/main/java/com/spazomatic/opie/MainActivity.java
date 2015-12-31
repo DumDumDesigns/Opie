@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     private static final String LOG_TAG = MainActivity.class.getName();
     private GoogleApiClient googleApiClient;
-    // Request code to use when launching the resolution activity
+
     private static final int REQUEST_RESOLVE_ERROR = 1001;
     // Unique tag for the error dialog fragment
     private static final String DIALOG_ERROR = "dialog_error";
